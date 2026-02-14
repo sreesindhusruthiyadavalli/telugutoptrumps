@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Telugu Writers Top Trumps</title>
+    <style>
+        /* [Keep all previous CSS] */
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, #FF6B35, #F7931E);
+            color: #333;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .game-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background: white;
+            border: 5px solid #FFD23F;
+            border-radius: 20px;
+            padding: 20px;
+            margin: 20px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .stats div {
+            display: flex;
+            justify-content: space-between;
+            margin: 10px 0;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        button {
+            background: #2196F3;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            margin: 5px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background: #1976D2;
+        }
+
+        button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .status {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 15px;
+            margin: 20px 0;
+        }
+
+        .mode-selector {
+            margin: 20px 0;
+        }
+
+        .multiplayer {
+            background: #4CAF50;
+        }
+
+        .singleplayer {
+            background: #FF9800;
+        }
+
+        #room-code {
+            font-size: 24px;
+            font-weight: bold;
+            color: #4CAF50;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="game-container">
+        <h1>🇮🇳 Telugu Writers & Poets Top Trumps</h1>
+
+        <!-- Mode Selection -->
+        <div class="mode-selector" id="mode-select">
+            <button class="singleplayer" onclick="startSinglePlayer()">🎮 Single Player (AI)</button>
+            <button class="multiplayer" onclick="createRoom()">👥 Multiplayer (Live)</button>
+        </div>
+
+        <!-- Game Status -->
+        <div class="status hidden" id="game-status">
+            <p id="message">Click Start to play!</p>
+            <div id="room-info" class="hidden">
+                <p><span id="room-code"></span></p>
+                <p>Player: <span id="player-count">0</span> | Opponent: <span id="ai-count">0</span> | Pot: <span id="pot-count">0</span></p>
+            </div>
+        </div>
+
+        <!-- Game Boards -->
+        <div class="cards hidden" id="game-board">
+            <div class="card" id="player-card">
+                <h2 id="player-name">Your Card</h2>
+                <div class="stats"></div>
+                <div class="buttons"></div>
+            </div>
+            <div class="card hidden" id="ai-card">
+                <h2 id="ai-name">AI Card</h2>
+                <div class="stats"></div>
+            </div>
+        </div>
+
+        <!-- Controls -->
+        <div id="controls">
+            <button id="next-btn" class="hidden" onclick="nextRound()">Next Round</button>
+            <button id="restart-btn" class="hidden" onclick="restartGame()">New Game</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

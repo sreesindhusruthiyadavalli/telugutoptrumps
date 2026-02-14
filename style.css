@@ -1,0 +1,74 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #FF6B35, #F7931E);
+    color: #333;
+    text-align: center;
+    padding: 20px;
+}
+
+.game-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.card {
+    background: white;
+    border: 5px solid #FFD23F;
+    border-radius: 20px;
+    padding: 20px;
+    margin: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transform: rotate(-2deg);
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: rotate(0deg) scale(1.05);
+}
+
+.stats div {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.buttons button {
+    background: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.buttons button:hover {
+    background: #45a049;
+}
+
+.hidden {
+    display: none;
+}
+
+.status {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+#start-btn,
+#next-btn,
+#restart-btn {
+    background: #2196F3;
+    color: white;
+    padding: 15px 30px;
+    font-size: 18px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 10px;
+}
